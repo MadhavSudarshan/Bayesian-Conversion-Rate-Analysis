@@ -1,0 +1,9 @@
+# Trace plot
+pm.traceplot(trace)
+plt.show()
+
+# Posterior distribution plot
+pm.plot_posterior(trace, credible_interval=0.95)
+plt.title('Posterior Distribution of Conversion Rate')
+plt.xlabel('Conversion Rate')
+plt.show()

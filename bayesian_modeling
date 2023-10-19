@@ -1,0 +1,15 @@
+import pymc3 as pm
+
+# Bayesian modeling
+with pm.Model() as model:
+    # Prior distribution for conversion rate (Beta distribution)
+    conversion_rate = pm.Beta('conversion_rate', alpha=2, beta=2)
+    
+    # Likelihood (Binomial distribution)
+    likelihood = pm.Binomial('likelihood', n=total_visitors, p=conversion_rate, observed=data['Conversions'])
+    
+    # MCMC sampling
+    trace = pm.sample(2000, tune=1000, cores=2)
+
+# Posterior analysis
+pm.summary(trace).round(2)

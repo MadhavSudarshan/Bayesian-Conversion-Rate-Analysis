@@ -1,0 +1,9 @@
+import numpy as np
+
+# Set random seed for reproducibility
+np.random.seed(42)
+
+# Generate synthetic data
+total_visitors = 1000
+conversion_rate_true = 0.1  # True conversion rate (known)
+conversions = np.random.binomial(n=1, p=conversion_rate_true, size=total_visitors)

@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create a DataFrame
+data = pd.DataFrame({'Conversions': conversions})
+
+# Visualize the data
+plt.hist(data['Conversions'], bins=2, rwidth=0.8)
+plt.title('Conversion Distribution')
+plt.xlabel('Conversions')
+plt.ylabel('Frequency')
+plt.show()
